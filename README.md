@@ -10,7 +10,7 @@ You can add this library as a local, per-project, development-time dependency to
 
 ## Usage
 
-...
+The example below shows how you activate and configure this test listener in your PHPUnit XML configuration file:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -42,4 +42,14 @@ You can add this library as a local, per-project, development-time dependency to
     </listeners>
 </phpunit>
 ```
+
+The following elements are relevant to this test listener and its configuration:
+
+* `<listeners>` is the configuration section for test listeners
+* `<listener>` configures (an instance of) the `PHPUnit\MemoryProfiler\TestListener` class as a test listener
+* `<arguments>` is the configuration for that test listener
+* The first argument is the path to the directory where the memory profile information is to be dumped, in this example `/tmp`
+* The second argument is the desired format for the memory profile information dump, in this example `callgrind` (valid values are `callgrind` and `pprof`)
+
+The rest of the `phpunit.xml` example shown above are best practice configuration defaults that were generated using `phpunit --generate-configuration`.
 
