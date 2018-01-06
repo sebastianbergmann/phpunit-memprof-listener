@@ -24,7 +24,7 @@ final class TestListener implements TestListenerInterface
     private $testSuites = 0;
 
     /**
-     * @var string
+     * @var resource
      */
     private $output;
 
